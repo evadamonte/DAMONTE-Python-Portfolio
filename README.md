@@ -1,6 +1,6 @@
 # DAMONTE-Python-Portfolio
 
-<h3> My Python Portfolio 😇 
+<h3> My Python Portfolio 😇 <h3> 
 This respositpry will contain my Python Portfolio for the work that I acomplish in Elements of Computing 2 during the spring semester my junior year. I am hoping to sucessfully demonstraight my skills in python inclduing programing, data manipulation, visualization, and machine learning. I will focus in a food theme in order to give my portfolio some consistncy and <em>flavor</em> 🥰
 
 
