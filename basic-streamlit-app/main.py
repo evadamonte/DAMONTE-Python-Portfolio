@@ -22,7 +22,7 @@ filtered_df = df[df["island"] == island]
 st.write(f"Penguins in {island}: island")
 st.dataframe(filtered_df)
 
-st.button('Hit me')
+st.button('Reset')
 st.radio('Pick one:', ['female','male'])
 
 

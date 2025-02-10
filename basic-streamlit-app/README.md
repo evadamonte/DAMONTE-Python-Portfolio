@@ -1,4 +1,3 @@
-# this is my streamlit app
 
 # 🐧 Penguins Dataset
 
