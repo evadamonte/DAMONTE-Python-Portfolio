@@ -24,4 +24,21 @@ st.dataframe(filtered_df)
 
 st.button('Hit me')
 st.radio('Pick one:', ['female','male'])
-st.slider('Slide me', min_value=0, max_value=10)
+
+
+bill_length_range = st.slider(
+    "Select Bill Length Range (mm)", 
+    min_value=int(df["bill_length_mm"].min()), 
+    max_value=int(df["bill_length_mm"].max()), 
+    value=(int(df["bill_length_mm"].min()), int(df["bill_length_mm"].max()))
+)
+
+# Filter the DataFrame based on user selection
+filtered_df = df[(df["island"] == island) & 
+                 (df["bill_length_mm"] >= bill_length_range[0]) & 
+                 (df["bill_length_mm"] <= bill_length_range[1])]
+
+# Add a button to display the filtered data
+if st.button("Show Filtered Data"):
+    st.write(f"Penguins on {island} island with bill length in the selected range:")
+    st.dataframe(filtered_df)
