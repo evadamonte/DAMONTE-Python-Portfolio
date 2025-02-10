@@ -1,102 +1,21 @@
 # DAMONTE-Python-Portfolio
-## Hi there 👋
-# I hope you have a great day! 
-Read me :)
-# Hi, I'm Eva Diana Damonte 👋
 
-Welcome to my GitHub profile! I’m a data science enthusiast with a passion for analyzing data and building impactful solutions. Check out my repositories and feel free to connect!
+<h3> My Python Portfolio 😇 <h3> 
+This respositpry will contain my Python Portfolio for the work that I acomplish in Elements of Computing 2 during the spring semester my junior year. I am hoping to sucessfully demonstraight my skills in python inclduing programing, data manipulation, visualization, and machine learning. I will focus in a food theme in order to give my portfolio some consistncy and <em>flavor</em> 🥰
 
-## 📚 About Me
-- 🔭 Currently working on Learning and Mastering Skills in Elements of Computing 2.
-- 🌱 I’m learning how to code more effincetly and effectivly using tools like python and VS code.
-- 👯 I’m looking to collaborate on food reviews as well as sports analytics.
-- 💬 Ask me about data science, Python, machine learning, or anything tech-related!
-- 📫 How to reach me: edamont2@nd.edu
-- 🐮 Fun Fact: I grew up on a ranch in Reno, NV 
-- ## Education 🎓
-- **Notre Dame Degree  (coming in 2026) Notre Dame, IN
-- **High School Degree - Bishop Manogue Catholic High School Reno, NV
-- ** Check out my resume [here](https://docs.google.com/document/d/1S5iL3WrXjN5-NgfTV_NXXNC-dMP5qe_g/edit?usp=sharing&ouid=118374376318988041395&rtpof=true&sd=true).
 
-## 💼 Technical Skills
-- **Languages**: Python, R.
-- **Libraries & Frameworks**: Pandas, NumPy, Sea Born
-- **Data Visualization**: Matplotlib, Seaborn.
-- **Databases**: MySQL
-- **Tools & Platforms**: GitHub, Jupyter Notebooks
+## Portfolio Structure 🍔🌭🌮🌯🥙🥗🍝🧁🍰🍭🥥🥩🍘
+I plan on using data to understand the best foods for each age group as well as create easy ways and delicous recepies along the way. I hope to understand consumer behavior based on age group and range of family size as well as the break down of certain food compoistion and their nutrional facts. 
 
-## 🌟 Projects
-Check out my Data Science Portfolio(coming soon!) for notable projects.
+I plan to organize my portfolio as follows:
 
-- Cool Coffee - (South Bend Coffee Shop Reviews): coming soon :) 
-- Womens and Male sporting event Attendance- (Sports Analytics Project ): Comming Soon :)
-- Who going to mass - (Dorm Data): Comming soon :)
-- Data Science Portfolio : https://github.com/evadamonte/DAMONTE-Python-Portfolio 
-## 📫 How to reach me
-- 📧 Email: [edamont2@nd.edu]
-- 🐦 Instagram: [Eva_Damonte]
-- 🔗 LinkedIn: [www.linkedin.com/in/eva-damonte]
+- **EDA📊**: Folder for all my Exploratory Data Analysis projects, where I explore and clean datasets. I hope to explore to uncover hidden insights from food datasets, suhc as identifying correlations between food ingridients and nutrional values, and understanding regional consumption trends. 
+- **Visualizations👀**: Folder for projects focusing on data visualization using libraries like `matplotlib`, `seaborn`, or `plotly`. I will visualize key aspects of food data like the distribution of calories in different food categories, or compare allergen content across various products, making the data more accessible and easier to interpret for decision-making.
+- **Models🥒**: Folder for machine learning models, including both supervised and unsupervised learning. As well as apply machine learning models to predict factors like shelf life, consumer preferences, or the likelihood of foodborne illness outbreaks based on historical data and current trends.
+- **Notebooks📓**: Folder for Jupyter Notebooks containing step-by-step code explanations and project walkthroughs while also using Jupyter Notebooks to combine code, visualizations, and markdown to explain your findings clearly, making it easier for others to understand the methodology and replicate the analysis in their own projects.
 
----
-## 💖 What I Add
-1. **Professional Bio**:
-I am a junior at the University of Notre Dame studing finance with a minor in computer digital technology and theology. I am an interested student who enjoys real life application and hands on learning. I am from Reno, Nevada (the biggest little city in the world) and I love the outdoors. Catch me skiing both in the mountains and on Lake Tahoe! I enjoy making data come to life and engaging in the visualization process of code. I enjoy taking data that is appealing and summarizing it in a way that is easy for others to stand as well as is accurate as possible. I look forward to creating fun and engaging projects this semester as I continue to grow and expand my skils in python and vs code. 
-   
-2. **Technical Skills**:
-   - Python
-   - R
-   - Leadership
-   - Teamwork
-   - FUN!
-3. **Projects**:
-   - I am really excited to add my projects which will be coming soon!## Hi there 👋
-# I hope you have a great day! 
-Read me :)
-# Hi, I'm Eva Diana Damonte 👋
+## Future Additions
 
-Welcome to my GitHub profile! I’m a data science enthusiast with a passion for analyzing data and building impactful solutions. Check out my repositories and feel free to connect!
-
-## 📚 About Me
-- 🔭 Currently working on Learning and Mastering Skills in Elements of Computing 2.
-- 🌱 I’m learning how to code more effincetly and effectivly using tools like python and VS code.
-- 👯 I’m looking to collaborate on food reviews as well as sports analytics.
-- 💬 Ask me about data science, Python, machine learning, or anything tech-related!
-- 📫 How to reach me: edamont2@nd.edu
-- 🐮 Fun Fact: I grew up on a ranch in Reno, NV 
-- ## Education 🎓
-- **Notre Dame Degree  (coming in 2026) Notre Dame, IN
-- **High School Degree - Bishop Manogue Catholic High School Reno, NV
-- ** Check out my resume [here](https://docs.google.com/document/d/1S5iL3WrXjN5-NgfTV_NXXNC-dMP5qe_g/edit?usp=sharing&ouid=118374376318988041395&rtpof=true&sd=true).
-
-## 💼 Technical Skills
-- **Languages**: Python, R.
-- **Libraries & Frameworks**: Pandas, NumPy, Sea Born
-- **Data Visualization**: Matplotlib, Seaborn.
-- **Databases**: MySQL
-- **Tools & Platforms**: GitHub, Jupyter Notebooks
-
-## 🌟 Projects
-Check out my Data Science Portfolio(coming soon!) for notable projects.
-
-- Cool Coffee - (South Bend Coffee Shop Reviews): coming soon :) 
-- Womens and Male sporting event Attendance- (Sports Analytics Project ): Comming Soon :)
-- Who going to mass - (Dorm Data): Comming soon :)
-- Data Science Portfolio : https://github.com/evadamonte/DAMONTE-Python-Portfolio 
-## 📫 How to reach me
-- 📧 Email: [edamont2@nd.edu]
-- 🐦 Instagram: [Eva_Damonte]
-- 🔗 LinkedIn: [www.linkedin.com/in/eva-damonte]
-
----
-## 💖 What I Add
-1. **Professional Bio**:
-I am a junior at the University of Notre Dame studing finance with a minor in computer digital technology and theology. I am an interested student who enjoys real life application and hands on learning. I am from Reno, Nevada (the biggest little city in the world) and I love the outdoors. Catch me skiing both in the mountains and on Lake Tahoe! I enjoy making data come to life and engaging in the visualization process of code. I enjoy taking data that is appealing and summarizing it in a way that is easy for others to stand as well as is accurate as possible. I look forward to creating fun and engaging projects this semester as I continue to grow and expand my skils in python and vs code. 
-   
-2. **Technical Skills**:
-   - Python
-   - R
-   - Leadership
-   - Teamwork
-   - FUN!
-3. **Projects**:
-   - I am really excited to add my projects which will be coming soon!
+- I will continue to add projects as I work through more advanced topics like deep learning, NLP, and time series analysis.
+- My projects will be regularly updated with new techniques, optimizations, and analysis.
+- I also plan to create folders as well as use graphs to visualize my data more efficiently. Some of these graphs could be scatter plats or bot plots. 
