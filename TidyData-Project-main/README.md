@@ -26,10 +26,16 @@ Install the following Python libraries:
 - import numpy as np
 
 ### Running the Project:
+We are first going to need to open the terminal and download the files. You can do that by following these steps:
+Step 1: Download the Tidy Data folder which contains the data set as well as the notebook 
+You can also run this git command that clones the repository from GitHub onto your local computer
+git clone https://github.com/evadamonte/TidyData-Project.git
 ```bash
-git clone https://github.com/evadamonte/Tidy-Data-Project-.git
-cd Tidy-Data-Project-
-jupyter notebook tidy_data_project.ipynb
+Step 2: navigate to the correct folder:
+cd TidyData-Project-main
+
+Step 3: Open a jupyter notebook:
+jupyter notebook Data_Tidy_Project.ipynb
 ```
 
 ---
