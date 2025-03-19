@@ -1,7 +1,5 @@
 # DAMONTE-Python-Portfolio
-## Hi there 👋
-# I hope you have a great day! 
-Read me :)
+
 # Hi, I'm Eva Diana Damonte 👋
 
 Welcome to my GitHub profile! I’m a data science enthusiast with a passion for analyzing data and building impactful solutions. Check out my repositories and feel free to connect!
@@ -26,7 +24,7 @@ Welcome to my GitHub profile! I’m a data science enthusiast with a passion for
 - **Tools & Platforms**: GitHub, Jupyter Notebooks
 
 ## 🌟 Projects
-Check out my Data Science Portfolio(coming soon!) for notable projects.
+Check out my Data Science Portfolio https://github.com/evadamonte/DAMONTE-Python-Portfolio for notable projects.
 
 - Penguins - (Discovering penguins on three different islands: https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/basic-streamlit-app/README.md)
 - Cool Coffee - (South Bend Coffee Shop Reviews): coming soon :) 
