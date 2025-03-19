@@ -27,6 +27,7 @@ Install the following Python libraries:
 
 ### Running the Project:
 We are first going to need to open the terminal and download the files. You can do that by following these steps:
+```bash
 Step 1: Download the Tidy Data folder which contains the data set as well as the notebook 
 You can also run this git command that clones the repository from GitHub onto your local computer
 git clone https://github.com/evadamonte/TidyData-Project.git
