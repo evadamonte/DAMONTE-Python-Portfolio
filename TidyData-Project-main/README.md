@@ -21,14 +21,16 @@ Install the following Python libraries:
 - matplotlib
 - seaborn
 - jupyter (if running locally)
+- You can do this by running the following code:
+- import pandas as pd
+- import numpy as np
 
 ### Running the Project:
 ```bash
-git clone https://github.com/your-username/Tidy-Data-Project-.git
+git clone https://github.com/evadamonte/Tidy-Data-Project-.git
 cd Tidy-Data-Project-
 jupyter notebook tidy_data_project.ipynb
 ```
-If using Google Colab, upload the notebook and dataset, then run all cells.
 
 ---
 
