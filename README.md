@@ -32,8 +32,9 @@ Check out my Data Science Portfolio(coming soon!) for notable projects.
 - Cool Coffee - (South Bend Coffee Shop Reviews): coming soon :) 
 - Womens and Male sporting event Attendance- (Sports Analytics Project ): Comming Soon :)
 - Who going to mass - (Dorm Data): Comming soon :)
-- Data Science Portfolio : https://github.com/evadamonte/DAMONTE-Python-Portfolio 
-## 📫 How to reach me
+- Data Science Portfolio : https://github.com/evadamonte/DAMONTE-Python-Portfolio
+- Tidy Data Project🧼🫧: https://github.com/evadamonte/TidyData-Project 
+- - ## 📫 How to reach me
 - 📧 Email: [edamont2@nd.edu]
 - 🐦 Instagram: [Eva_Damonte]
 - 🔗 LinkedIn: [www.linkedin.com/in/eva-damonte]
