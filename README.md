@@ -1,7 +1,5 @@
 # DAMONTE-Python-Portfolio
-## Hi there 👋
-# I hope you have a great day! 
-Read me :)
+
 # Hi, I'm Eva Diana Damonte 👋
 
 Welcome to my GitHub profile! I’m a data science enthusiast with a passion for analyzing data and building impactful solutions. Check out my repositories and feel free to connect!
@@ -26,14 +24,24 @@ Welcome to my GitHub profile! I’m a data science enthusiast with a passion for
 - **Tools & Platforms**: GitHub, Jupyter Notebooks
 
 ## 🌟 Projects
-Check out my Data Science Portfolio(coming soon!) for notable projects.
+Check out my Data Science Portfolio https://github.com/evadamonte/DAMONTE-Python-Portfolio for notable projects.
 
 - Penguins - (Discovering penguins on three different islands: https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/basic-streamlit-app/README.md)
 - Cool Coffee - (South Bend Coffee Shop Reviews): coming soon :) 
 - Womens and Male sporting event Attendance- (Sports Analytics Project ): Comming Soon :)
 - Who going to mass - (Dorm Data): Comming soon :)
 - Data Science Portfolio : https://github.com/evadamonte/DAMONTE-Python-Portfolio
-- Tidy Data Project🧼🫧: https://github.com/evadamonte/TidyData-Project 
+
+-  ## Tidy Data Project🧼🫧:
+- Project Overview: In my tidy data project, there is a transforming of a dataset. I am using the 2008 Olumpic medalist data set which has many missing values and is untidy. In my project, I reshaped the data from a wide to long format, as well as create seperate columsnb for the main variables in the data set which are gender, sports, as well as the metal recieved. After all of the data cleaning, I was able to create a clear and concise dataset that is easy to underatand. I also created multiple visulizations so that you can clearly see the data and its conenctions!
+
+Link to Tidy Data Repository: https://github.com/evadamonte/DAMONTE-Python-Portfolio/tree/main/TidyData-Project-main
+Link to tidy data readme: https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/TidyData-Project-main/README.md
+
+Link to tidy data notebook: https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/TidyData-Project-main/Data_Tidy_Project.ipynb 
+
+![Medal by Sport](https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/TidyData-Project-main/number_of_medals.png)
+- 
 - - ## 📫 How to reach me
 - 📧 Email: [edamont2@nd.edu]
 - 🐦 Instagram: [Eva_Damonte]
