@@ -45,15 +45,17 @@ Link to tidy data notebook: https://github.com/evadamonte/DAMONTE-Python-Portfol
 
 ## 🧠 Named Entity Recognition (NER) App
 
-This project is a fully interactive Named Entity Recognition (NER) web application built using **spaCy** and **Streamlit**. It allows users to upload or enter text, define custom entity patterns, and view real-time entity highlights with color-coded labels.
+ Built with **spaCy** and **Streamlit**, the app features:
+- 📝 Support for both pasted and uploaded text
+- 🧠 Rule-based custom entity matching with spaCy’s `EntityRuler`
+- 🎨 Dynamic, color-coded visual display of named entities
+- ☁️ Deployed live using Streamlit Cloud
 
-Key features include:
-- 📄 Support for text input or file upload
-- 🏷️ Add your own entity types (e.g., `FOOD`, `BRAND`, `EVENT`)
-- 🎨 Dynamic color-coded visualization using spaCy’s DisplaCy
-- ☁️ Live deployment via Streamlit Cloud
-
-This app demonstrates my ability to work with real-world NLP tools, build clean and intuitive web interfaces, and deploy production-ready applications.
+This project complements my coding portfolio by demonstrating practical skills in:
+- Natural Language Processing (NLP)
+- Web app development with Python and Streamlit
+- Model deployment and GitHub version control
+- Creating intuitive user experiences for technical tools
 
 👉 [Try the app live](https://damonte-python-portfolio-mgdvyszpus3e5ttel7hqh2.streamlit.app/)  
 🔗 [View the full project on GitHub](https://github.com/evadamonte/DAMONTE-Python-Portfolio/tree/main/NERStreamlitApp)
