@@ -55,8 +55,8 @@ Key features include:
 
 This app demonstrates my ability to work with real-world NLP tools, build clean and intuitive web interfaces, and deploy production-ready applications.
 
-👉 [Try the app live](https://Damonte-python-portfolio-streamlitapp.streamlit.app)  
-🔗 [View the full project on GitHub](https://github.com/DAMONTE-Python-Portfolio/tree/main/NERStreamlitApp)
+👉 [Try the app live](https://damonte-python-portfolio-mgdvyszpus3e5ttel7hqh2.streamlit.app/)  
+🔗 [View the full project on GitHub](https://github.com/evadamonte/DAMONTE-Python-Portfolio/tree/main/NERStreamlitApp)
 
 - 
 - - ## 📫 How to reach me
