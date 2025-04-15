@@ -42,6 +42,22 @@ Link to tidy data readme: https://github.com/evadamonte/DAMONTE-Python-Portfolio
 Link to tidy data notebook: https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/TidyData-Project-main/Data_Tidy_Project.ipynb 
 
 ![Medal by Sport](https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/TidyData-Project-main/number_of_medals.png)
+
+## 🧠 Named Entity Recognition (NER) App
+
+This project is a fully interactive Named Entity Recognition (NER) web application built using **spaCy** and **Streamlit**. It allows users to upload or enter text, define custom entity patterns, and view real-time entity highlights with color-coded labels.
+
+Key features include:
+- 📄 Support for text input or file upload
+- 🏷️ Add your own entity types (e.g., `FOOD`, `BRAND`, `EVENT`)
+- 🎨 Dynamic color-coded visualization using spaCy’s DisplaCy
+- ☁️ Live deployment via Streamlit Cloud
+
+This app demonstrates my ability to work with real-world NLP tools, build clean and intuitive web interfaces, and deploy production-ready applications.
+
+👉 [Try the app live](https://Damonte-python-portfolio-streamlitapp.streamlit.app)  
+🔗 [View the full project on GitHub](https://github.com/DAMONTE-Python-Portfolio/tree/main/NERStreamlitApp)
+
 - 
 - - ## 📫 How to reach me
 - 📧 Email: [edamont2@nd.edu]
