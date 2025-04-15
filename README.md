@@ -36,6 +36,7 @@ Check out my Data Science Portfolio https://github.com/evadamonte/DAMONTE-Python
 - Project Overview: In my tidy data project, there is a transforming of a dataset. I am using the 2008 Olumpic medalist data set which has many missing values and is untidy. In my project, I reshaped the data from a wide to long format, as well as create seperate columsnb for the main variables in the data set which are gender, sports, as well as the metal recieved. After all of the data cleaning, I was able to create a clear and concise dataset that is easy to underatand. I also created multiple visulizations so that you can clearly see the data and its conenctions!
 
 Link to Tidy Data Repository: https://github.com/evadamonte/DAMONTE-Python-Portfolio/tree/main/TidyData-Project-main
+
 Link to tidy data readme: https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/TidyData-Project-main/README.md
 
 Link to tidy data notebook: https://github.com/evadamonte/DAMONTE-Python-Portfolio/blob/main/TidyData-Project-main/Data_Tidy_Project.ipynb 
