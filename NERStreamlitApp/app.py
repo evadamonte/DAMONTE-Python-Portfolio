@@ -84,7 +84,7 @@ if st.button("🚀 Analyze Text"):
             "PERSON": "#ADD8E6",    # Light Blue
             "ORG": "#FFD700",       # Gold
             "GPE": "#90EE90",       # Light Green
-            "DATE": "#FFA07A",      # Light Salmon
+            "DATE": "#FFA07A",      # Light Salmonstreamlit run app.py
             "FOOD": "#FF69B4",      # Hot Pink
             "EVENT": "#BA55D3",     # Purple
         }

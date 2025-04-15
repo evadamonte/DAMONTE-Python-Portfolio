@@ -114,36 +114,67 @@ The Custom NER App is designed to help users explore and apply Named Entity Reco
 ---
 
 
-## 💻 Local Installation Instructions
+---
 
-To run the app locally on your machine:
+## 🌐 How to Deploy This App to Streamlit Cloud
+
+You can run this app live on the web using [Streamlit Cloud](https://streamlit.io/cloud). Here’s how to deploy it yourself:
+
+### 🚀 Step-by-Step Deployment Instructions
+
+1. **Push your app to GitHub**
+
+Make sure your app folder (this project) is on GitHub and includes:
+- `app.py`
+- `requirements.txt`
+- `.streamlit/config.toml` (for dark theme)
+- Any assets (like images or screenshots)
+
+If you haven't yet:
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/NERStreamlitApp.git
-cd NERStreamlitApp
+git add .
+git commit -m "Final app version ready for deployment"
+git push origin main
 
-# Install dependencies
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
+Log in to Streamlit Cloud
 
-# Run the app
-streamlit run app.py
+Use your GitHub account to sign in
+
+Click “New app”
+
+Configure your deployment
+
+Fill out the form:
+
+Repository: yourusername/DAMONTE-Python-Portfolio
+
+Branch: main
+
+App file path: NERStreamlitApp/app.py
+
+Click “Deploy” 🚀
+
+Wait for it to build
+
+Streamlit will:
+
+Clone your repo
+
+Install everything from requirements.txt
+
+Launch the app automatically
+
+Get your live URL
+
+After it deploys, you’ll get a public link like:
+👉 [Click here to try the app live](https://your-link.streamlit.app)
 
 
 ---
 
-## 🌐 Live Demo
 
-Want to try the app online without installing anything?
-
-👉 [Click here to launch the app on Streamlit Cloud](https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl)
-
-## 📁 Project Structure
-
-NERStreamlitApp/ ├── app.py # Main Streamlit app ├── requirements.txt # Required Python packages ├── README.md # App documentation ├── .streamlit/ │ └── config.toml # Dark theme and UI settings └── images/ └── ner-example.png # Screenshot of highlighted NER output
-
-## 🧠 Powered By
+**🧠 Powered By**
 
 | Tool          | Description                                 |
 |---------------|---------------------------------------------|
@@ -154,25 +185,11 @@ NERStreamlitApp/ ├── app.py # Main Streamlit app ├── requirements.tx
 
 ---
 
----
-
-## 📚 References
-
-Here are some of the key resources used to build and support this application:
+**📚 References**
 
 - 🔗 [spaCy Documentation](https://spacy.io/usage)  
-  Comprehensive guide to spaCy's NLP features and components.
-
 - 🔧 [spaCy EntityRuler](https://spacy.io/usage/rule-based-matching#entityruler)  
-  Detailed documentation for creating custom entity patterns using the `EntityRuler`.
-
 - 🎨 [DisplaCy Visualizer](https://spacy.io/usage/visualizers)  
-  Used for rendering and highlighting named entities within the app.
-
 - 🖥️ [Streamlit Documentation](https://docs.streamlit.io)  
-  Framework used for building the interactive app interface.
+- 🧠 [Streamlit + spaCy Integration Example](https://blog.streamlit.io/streamlit-with-spacy/)
 
-- 🧠 [Streamlit + spaCy Integration Example](https://blog.streamlit.io/streamlit-with-spacy/)  
-  A helpful reference for combining NER and web-based visualization.
-
----
