@@ -1,21 +1,17 @@
 import streamlit as st
-import os
 
 # Set page configuration
 st.set_page_config(page_title="Fitness Goal Tracker", page_icon="🏋️‍♂️", layout="centered")
 
-# Main Title
+# Display a public online image
+st.sidebar.image(
+    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    use_column_width=True
+)
+
 st.title("🏋️‍♂️ Fitness Goal Tracker")
-
-# Try to load your personal photo
-photo_path = "my_photo.jpg"
-
-if os.path.exists(photo_path):
-    st.sidebar.image(photo_path, use_column_width=True)
-else:
-    st.sidebar.warning("Your photo was not found. Please add 'my_photo.jpg' to the StreamlitAppFinal folder!")
-
 st.write("Welcome! Enter your details below to get a personalized fitness and nutrition plan tailored to your goals.")
+
 
 # User Inputs
 st.header("📋 Enter Your Information")
