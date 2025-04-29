@@ -5,7 +5,7 @@ st.set_page_config(page_title="Fitness Goal Tracker", page_icon="🏋️‍♂�
 
 # Display a public online image
 st.sidebar.image(
-    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    "StreamlitAppFinal/my_photo.jpg",
     use_column_width=True
 )
 
