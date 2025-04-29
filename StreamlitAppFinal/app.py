@@ -1,147 +1,150 @@
 import streamlit as st
-
-# Set page configuration
-st.set_page_config(page_title="Fitness Goal Tracker", page_icon="🏋️‍♂️", layout="centered")
-
-
 from PIL import Image
-import streamlit as st
+import os
 
-# Open and rotate the image
-image = Image.open("my_photo.jpg")
-rotated_image = image.rotate(-90, expand=True)  # Rotate 90 degrees clockwise
+# Set page config
+st.set_page_config(page_title="Fitness Goal Tracker", page_icon="💪", layout="centered")
 
-# Display in Streamlit sidebar
-st.sidebar.image(rotated_image, use_column_width=True)
+# Display a hero image
+st.image("https://images.unsplash.com/photo-1583454110551-21c3e7f42b37?fit=crop&w=1200&q=80", use_column_width=True)
 
-st.title("🏋️‍♂️ Fitness Goal Tracker")
-st.write("Welcome! Enter your details below to get a personalized fitness and nutrition plan tailored to your goals.")
+# Try loading your personal photo
+try:
+    image = Image.open("my_photo.jpg")
+    rotated_image = image.rotate(-90, expand=True)
+    st.sidebar.image(rotated_image, use_column_width=True)
+except:
+    st.sidebar.warning("Personal image not found. Using app default visuals.")
 
+# App title and intro
+st.title("💪 Fitness Goal Tracker")
+st.markdown(
+    "<h4 style='color: #4CAF50;'>Plan smarter. Train better. Eat cleaner.</h4>",
+    unsafe_allow_html=True,
+)
+st.write("Enter your information below to receive a personalized fitness and nutrition plan tailored to your goals.")
 
-# User Inputs
-st.header("📋 Enter Your Information")
-weight = st.number_input("Enter your current weight (lbs):", min_value=50, max_value=500)
-goal_weight = st.number_input("Enter your goal weight (lbs):", min_value=50, max_value=500)
-height = st.number_input("Enter your height (inches):", min_value=48, max_value=84)
-age = st.number_input("Enter your age:", min_value=10, max_value=100)
-activity_level = st.selectbox("Select your activity level:", ["Sedentary", "Lightly Active", "Active", "Very Active"])
+# Input section
+st.markdown("### 📋 Your Info:")
+weight = st.number_input("Current weight (lbs):", min_value=50, max_value=500)
+goal_weight = st.number_input("Goal weight (lbs):", min_value=50, max_value=500)
+
+# New height input (feet and inches)
+height_feet = st.number_input("Height (feet):", min_value=3, max_value=8)
+height_inches = st.number_input("Additional height (inches):", min_value=0, max_value=11)
+height = height_feet * 12 + height_inches
+
+age = st.number_input("Age:", min_value=10, max_value=100)
+activity_level = st.selectbox("Activity level:", ["Sedentary", "Lightly Active", "Active", "Very Active"])
 goal_type = st.selectbox("What is your goal?", ["Lose weight", "Maintain", "Gain muscle"])
 
-# Create Tabs
-tab1, tab2 = st.tabs(["🏋️ Workout Plan", "🥗 Nutrition Plan"])
+# Tabs
+tab1, tab2, tab3, tab4 = st.tabs(["🏋️ Workout Plan", "🥗 Nutrition Plan", "🎤 Motivation", "🎵 Workout Music"])
 
-# When user clicks "Generate My Plan"
+# Generate Plan Button
 if st.button("Generate My Plan"):
-
-    # BMI Calculation
-    bmi = (weight / (height * height)) * 703
-    st.subheader(f"Your BMI is: {bmi:.1f}")
-
-    # BMI Category
-    if bmi < 18.5:
-        bmi_status = "Underweight"
-        st.info("You are underweight.")
-    elif bmi < 24.9:
-        bmi_status = "Healthy Weight"
-        st.success("You are at a healthy weight.")
-    elif bmi < 29.9:
-        bmi_status = "Overweight"
-        st.warning("You are overweight.")
+    # Basic input validation
+    if weight == 0 or goal_weight == 0 or height == 0 or age == 0:
+        st.error("🚫 Please make sure all input fields are filled out correctly before generating your plan.")
     else:
-        bmi_status = "Obese"
-        st.error("You are obese.")
+        # BMI calculation
+        bmi = (weight / (height * height)) * 703
+        st.subheader(f"Your BMI is: {bmi:.1f}")
+        if bmi < 18.5:
+            bmi_status = "Underweight"
+            st.info("You are underweight.")
+        elif bmi < 24.9:
+            bmi_status = "Healthy Weight"
+            st.success("You are at a healthy weight.")
+        elif bmi < 29.9:
+            bmi_status = "Overweight"
+            st.warning("You are overweight.")
+        else:
+            bmi_status = "Obese"
+            st.error("You are obese.")
 
-    # Calorie Estimate
-    bmr = 10 * (weight * 0.45) + 6.25 * (height * 2.54) - 5 * age + 5
-    multiplier = {"Sedentary": 1.2, "Lightly Active": 1.375, "Active": 1.55, "Very Active": 1.725}
-    maintenance_calories = bmr * multiplier[activity_level]
+        # Calorie estimation
+        bmr = 10 * (weight * 0.45) + 6.25 * (height * 2.54) - 5 * age + 5
+        multiplier = {"Sedentary": 1.2, "Lightly Active": 1.375, "Active": 1.55, "Very Active": 1.725}
+        maintenance_calories = bmr * multiplier[activity_level]
+        goal_calories = maintenance_calories + (-500 if goal_type == "Lose weight" else 300 if goal_type == "Gain muscle" else 0)
+        st.subheader(f"Recommended Daily Calories: {int(goal_calories)} kcal")
 
-    if goal_type == "Lose weight":
-        goal_calories = maintenance_calories - 500
-    elif goal_type == "Gain muscle":
-        goal_calories = maintenance_calories + 300
-    else:
-        goal_calories = maintenance_calories
-
-    st.subheader(f"Recommended Daily Calories: {int(goal_calories)} kcal")
-
-    # Start building the download plan text
-    plan_text = f"""Fitness Goal Tracker Plan
+        # Download plan text
+        plan_text = f"""Fitness Goal Tracker Plan
 ------------------------------
 Current Weight: {weight} lbs
 Goal Weight: {goal_weight} lbs
-Height: {height} inches
+Height: {height_feet} ft {height_inches} in ({height} inches)
 Age: {age}
 Activity Level: {activity_level}
 Goal Type: {goal_type}
-
 BMI: {bmi:.1f} ({bmi_status})
-Recommended Daily Calories: {int(goal_calories)} kcal
-
+Recommended Calories: {int(goal_calories)} kcal
 """
 
-    # Content inside tabs
-    with tab1:
-        st.header("🏋️ Workout Plan")
+        with tab1:
+            st.header("🏋️ Your Weekly Workout Plan")
+            if goal_type == "Lose weight":
+                plan = """
+                - 5x Brisk walks (30 mins)
+                - 2x Strength circuits
+                - 1x HIIT cardio session
+                """
+            elif goal_type == "Gain muscle":
+                plan = """
+                - 4x Strength (Push, Pull, Legs, Upper Split)
+                - 1x Conditioning (sleds, rowing)
+                """
+            else:
+                plan = """
+                - 3x Full-body lifts
+                - 2x Light cardio (cycling, jogging)
+                """
+            st.markdown(plan)
+            plan_text += "\nWorkout Plan:\n" + plan.replace("-", "*")
 
-        if goal_type == "Lose weight":
-            workout_plan = """
-            **Weekly Plan:**
-            - 30 minutes brisk walking 5x a week
-            - 2x Strength training sessions (full body circuits)
-            - 1x HIIT cardio session (20 mins)
+        with tab2:
+            st.header("🥗 Your Nutrition Guide")
+            nutrition = """
+            **Focus on:**
+            - Protein: Chicken, eggs, tofu, legumes
+            - Carbs: Brown rice, oats, quinoa
+            - Fats: Avocado, olive oil, almonds
+
+            **Sample Meals:**
+
+            🍽️ Protein Smoothie  
+            🍳 Veggie Omelet  
+            🥗 Chicken Power Bowl  
             """
-        elif goal_type == "Gain muscle":
-            workout_plan = """
-            **Weekly Plan:**
-            - 4x Strength training (Push/Pull/Legs/Upper Split)
-            - 1x Conditioning session (rowing, sled pushes)
-            """
-        else:
-            workout_plan = """
-            **Weekly Plan:**
-            - 3x Full-body strength workouts
-            - 2x Cardio sessions (light jog, swimming, cycling)
-            """
+            st.markdown(nutrition)
+            plan_text += "\nNutrition Plan:\n" + nutrition.replace("**", "").replace("-", "*")
 
-        st.markdown(workout_plan)
-        plan_text += workout_plan.replace("**", "").replace("-", "*") + "\n"
+        with tab3:
+            st.header("🔥 Motivational Speeches")
+            st.write("Need a boost? These short speeches will get your mindset right.")
+            st.markdown("**1. Eric Thomas – 'How Bad Do You Want It?'**")
+            st.video("https://www.youtube.com/watch?v=lsSC2vx7zFQ")
+            st.markdown("**2. Jocko Willink – 'GOOD'**")
+            st.video("https://www.youtube.com/watch?v=IdTMDpizis8")
+            st.markdown("**3. Les Brown – 'You Gotta Be Hungry'**")
+            st.video("https://www.youtube.com/watch?v=KxGRhd_iWuE")
 
-    with tab2:
-        st.header("🥗 Nutrition Plan")
+        with tab4:
+            st.header("🎵 Choose Your Workout Music")
+            workout_type = st.selectbox("What type of workout are you doing?", ["Yoga 🧘", "Jogging 🏃", "Weight Lifting 🏋️"])
 
-        nutrition_plan = """
-        **Focus on:**
-        - High-protein meals
-        - Plenty of vegetables and whole grains
-        - Healthy fats like avocado, nuts, and olive oil
-        - Stay hydrated
+            if workout_type == "Yoga 🧘":
+                st.markdown("**Relaxing Yoga Playlist**")
+                st.components.v1.iframe("https://open.spotify.com/embed/playlist/37i9dQZF1DWUZ5bk6qqDSy", height=380)
+            elif workout_type == "Jogging 🏃":
+                st.markdown("**Running Motivation Playlist**")
+                st.components.v1.iframe("https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC", height=380)
+            else:
+                st.markdown("**Hardcore Lifting Playlist**")
+                st.components.v1.iframe("https://open.spotify.com/embed/playlist/37i9dQZF1DWUVpAXiEPK8P", height=380)
 
-        **Sample Easy Recipes:**
-
-        🥤 **Protein Smoothie:**
-        - 1 scoop protein powder
-        - 1 banana
-        - 1 tbsp peanut butter
-        - 1 cup almond milk
-
-        🍽️ **Chicken Power Bowl:**
-        - Grilled chicken breast
-        - Quinoa or brown rice
-        - Roasted veggies
-        - Olive oil drizzle
-
-        🍳 **Veggie Omelette:**
-        - 2 eggs
-        - Spinach, tomatoes, mushrooms
-        - Sprinkle of cheese
-        """
-        st.markdown(nutrition_plan)
-        plan_text += nutrition_plan.replace("**", "").replace("-", "*") + "\n"
-
-    # Provide download button
-    st.subheader("📥 Download Your Custom Plan:")
-    st.download_button(label="Download My Plan",
-                       data=plan_text,
-                       file_name="fitness_goal_plan.txt",
-                       mime="text/plain")
+        # Provide download button
+        st.subheader("📥 Download Your Custom Plan:")
+        st.download_button("Download My Plan", plan_text, "fitness_plan.txt", "text/plain")
