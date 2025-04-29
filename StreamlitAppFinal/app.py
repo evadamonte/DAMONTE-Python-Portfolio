@@ -6,7 +6,7 @@ import os
 st.set_page_config(page_title="Fitness Goal Tracker", page_icon="💪", layout="centered")
 
 # Display a hero image
-st.image("https://images.unsplash.com/photo-1583454110551-21c3e7f42b37?fit=crop&w=1200&q=80", use_column_width=True)
+st.image("https://images.unsplash.com/photo-1583454110551-21c3e7f42b37?fit=crop&w=1200&q=80")
 
 # Try loading your personal photo
 try:
