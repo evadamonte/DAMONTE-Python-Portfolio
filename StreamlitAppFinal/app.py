@@ -3,11 +3,16 @@ import streamlit as st
 # Set page configuration
 st.set_page_config(page_title="Fitness Goal Tracker", page_icon="🏋️‍♂️", layout="centered")
 
-# Display a public online image
-st.sidebar.image(
-    "StreamlitAppFinal/my_photo.jpg",
-    use_column_width=True
-)
+
+from PIL import Image
+import streamlit as st
+
+# Open and rotate the image
+image = Image.open("my_photo.jpg")
+rotated_image = image.rotate(-90, expand=True)  # Rotate 90 degrees clockwise
+
+# Display in Streamlit sidebar
+st.sidebar.image(rotated_image, use_column_width=True)
 
 st.title("🏋️‍♂️ Fitness Goal Tracker")
 st.write("Welcome! Enter your details below to get a personalized fitness and nutrition plan tailored to your goals.")
