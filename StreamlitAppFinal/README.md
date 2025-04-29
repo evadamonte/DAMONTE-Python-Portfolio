@@ -1,10 +1,9 @@
-# Streamlit App Final Project
-
 # 🏋️‍♂️ Fitness Goal Tracker
 
 ## 📈 Project Overview
-The Fitness Goal Tracker app helps users plan their fitness journey by calculating BMI, estimating daily calorie needs, and suggesting customized workout and nutrition plans based on personal goals.  
-It solves the problem of confusion around fitness planning by providing clear, actionable steps and tips — whether the user wants to lose weight, maintain their health, or build muscle.
+The Fitness Goal Tracker is a fully interactive Streamlit app that empowers users to set fitness goals, calculate their BMI, estimate their daily calorie needs, and receive personalized workout and nutrition plans.  
+It solves the problem of information overload in health and fitness by providing clear, customized, actionable steps based on user inputs.  
+It also boosts motivation with embedded speeches and curated workout playlists, creating an immersive fitness planning experience.
 
 ---
 
@@ -17,23 +16,20 @@ cd DAMONTE-Python-Portfolio/StreamlitAppFinal
 ```
 
 ### 2. Install Required Dependencies
-You must have Python installed. Then install Streamlit:
+You must have Python 3.8+ installed.  
+Install Streamlit and Pillow (for image handling):
 ```bash
-pip install streamlit
+pip install streamlit pillow
 ```
 
-(Optional but recommended for better compatibility):
-```bash
-pip install -r requirements.txt
-```
-*(If you create a `requirements.txt`, just include: `streamlit`.)*
+*(Optional but cleaner: create a virtual environment first.)*
 
-### 3. Launch the App Locally
+### 3. Run the App Locally
 ```bash
 streamlit run app.py
 ```
 
-The app will open automatically in your browser at `http://localhost:8501`.
+The app will automatically open in your browser at `http://localhost:8501`.
 
 ---
 
@@ -42,59 +38,65 @@ The app will open automatically in your browser at `http://localhost:8501`.
 - **User Inputs:**
   - Current Weight (lbs)
   - Goal Weight (lbs)
-  - Height (inches)
+  - Height (entered in feet and inches)
   - Age
   - Activity Level (Sedentary, Lightly Active, Active, Very Active)
-  - Fitness Goal (Lose Weight, Maintain, Gain Muscle)
+  - Fitness Goal (Lose weight, Maintain, Gain muscle)
 
 - **Main Functions:**
   - Calculates BMI and categorizes health status.
-  - Estimates daily calorie needs based on inputs and goal type.
-  - Provides customized workout plans and fitness recommendations.
-  - Provides nutrition tips and sample recipes.
-  - Allows users to **download their personal fitness plan** as a `.txt` file.
+  - Estimates daily calorie needs based on user metrics and goals.
+  - Provides a downloadable custom fitness and nutrition plan.
+  - Displays weekly workout plans and nutrition guides.
+
+- **Bonus Interactive Features:**
+  - 🎤 Motivational speeches embedded directly in the app (YouTube).
+  - 🎵 Spotify playlists based on workout type (Yoga, Jogging, Weightlifting).
+  - Error handling for incomplete user inputs.
+  - Professional custom design with a cohesive fitness-app theme.
 
 - **Outputs:**
-  - BMI result and health interpretation
-  - Daily calorie recommendation
-  - Weekly workout plan
-  - Nutrition suggestions
-  - Downloadable plan text file
+  - Visual BMI results
+  - Calorie intake recommendation
+  - Workout schedule
+  - Nutrition tips and recipes
+  - Option to download a personal `.txt` fitness plan
 
 ---
 
 ## 📚 References & Resources
 
 - [Streamlit Documentation](https://docs.streamlit.io/)
-- [Unsplash](https://unsplash.com/) for free public domain images
-- [BMI Calculator Formula (CDC)](https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html)
-- [BMR and Calorie Need Estimations](https://www.calculator.net/bmr-calculator.html)
+- [Pillow Documentation](https://pillow.readthedocs.io/en/stable/)
+- [CDC - BMI Calculator Formula](https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html)
+- [Spotify Web Player Integration](https://developer.spotify.com/documentation/web-playback-sdk/)
 
 ---
 
 ## 🖼️ Visual Examples
 
-### Home Page
+### Homepage
 
-![Home Screenshot](https://via.placeholder.com/800x400.png?text=Fitness+Goal+Tracker+-+Home+Page)
-
----
-
-### Workout Plan Tab
-
-![Workout Plan Screenshot](https://via.placeholder.com/800x400.png?text=Workout+Plan+Tab)
+![Homepage Screenshot](https://via.placeholder.com/800x400.png?text=Fitness+Goal+Tracker+-+Home+Screen)
 
 ---
 
-### Nutrition Plan Tab
+### Workout and Nutrition Plans
 
-![Nutrition Plan Screenshot](https://via.placeholder.com/800x400.png?text=Nutrition+Plan+Tab)
-
----
-
-*Screenshots can be updated with real images from your deployed app if you want!*
+![Workout Plan Screenshot](https://via.placeholder.com/800x400.png?text=Workout+and+Nutrition+Plan+Tabs)
 
 ---
 
-# 🙌 Built with Passion for Helping Others Achieve Their Goals
+### Motivation and Music Sections
+
+![Motivation Music Screenshot](https://via.placeholder.com/800x400.png?text=Motivational+Speeches+and+Workout+Music)
+
+---
+
+> *You can update the screenshots later with real images after deployment by replacing the placeholder links.*
+
+---
+
+# 🙌 Built for Motivation, Wellness, and Goal-Crushing!
+
 
