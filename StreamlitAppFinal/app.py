@@ -10,7 +10,7 @@ st.image("https://images.unsplash.com/photo-1583454110551-21c3e7f42b37?fit=crop&
 
 # Try loading your personal photo
 try:
-    image = Image.open("my_photo.jpg")
+    image = Image.open("StreamlitAppFinal/my_photo.jpg")
     rotated_image = image.rotate(-90, expand=True)
     st.sidebar.image(rotated_image, use_column_width=True)
 except:
