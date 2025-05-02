@@ -174,7 +174,7 @@ Recommended Calories: {int(goal_calories)} kcal
 
         with nutrition_tab:
             st.header("🥗 Your Nutrition Guide")
-            st.markdown("How to meal prep: (https://nutritionsource.hsph.harvard.edu/meal-prep/")
+            st.markdown("How to meal prep: https://nutritionsource.hsph.harvard.edu/meal-prep/")
 
             st.markdown("### 🔑 Focus On:")
             st.markdown("- **Protein:** Chicken, tofu, fish, eggs — [Recipe Ideas](https://www.bbcgoodfood.com/recipes/collection/high-protein-recipes)")
