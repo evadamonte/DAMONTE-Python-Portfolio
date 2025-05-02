@@ -100,7 +100,7 @@ Whether you're trying to lose weight, gain muscle, or maintain a healthy lifesty
 - [JoyFoodSunshine – Smoothie + Omelet Recipes](https://joyfoodsunshine.com/)
 - [Oh She Glows – Power Bowl Meal Prep](https://ohsheglows.com/meal-prep-week-long-power-bowls/)
 - [Motivation Videos:](https://www.youtube.com/watch?v=BHY0FxzoKZE), [YOU vs YOU](https://www.youtube.com/watch?v=H5ExSyGTgt4), [David Goggins](https://www.youtube.com/watch?v=QTB1YiWxxKU)
-- [Spotify Playlists](https://open.spotify.com/)
+- [Spotify Playlists](https://open.spotify.com/genre/0JQ5DAqbMKFAXlCG6QvYQ4)
 
 ---
 
