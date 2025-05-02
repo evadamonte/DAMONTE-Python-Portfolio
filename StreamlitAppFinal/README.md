@@ -1,4 +1,4 @@
-# 💪 Fitness Goal Tracker
+# 💪 Fitness Plan 
 
 ## 📌 Project Overview
 This Streamlit app creates a customized fitness and nutrition plan based on user inputs including weight, height, age, activity level, and fitness goals. It was built to help users take control of their wellness journey by providing real-time feedback, workout guidance, meal suggestions, motivational speeches, and music playlists — all in one seamless, interactive tool.
