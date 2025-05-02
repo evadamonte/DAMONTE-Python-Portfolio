@@ -1,4 +1,4 @@
-# 💪 Fitness Goal Tracker
+# 💪 Fitness Plan 
 
 ## 📌 Project Overview
 This Streamlit app creates a customized fitness and nutrition plan based on user inputs including weight, height, age, activity level, and fitness goals. It was built to help users take control of their wellness journey by providing real-time feedback, workout guidance, meal suggestions, motivational speeches, and music playlists — all in one seamless, interactive tool.
@@ -7,34 +7,31 @@ Whether you're trying to lose weight, gain muscle, or maintain a healthy lifesty
 
 ---
 
-## 🛠️ Setup & Run Instructions
+### 🚀 Setup & Run Instructions
+To run this app locally:
 
-### 🧱 Local Installation
+```bash
+# 1. Clone the repository
+https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
+cd StreamlitAppFinal
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/evadamonte/DAMONTE-Python-Portfolio.git
-   cd DAMONTE-Python-Portfolio/StreamlitAppFinal
-   ```
+# 2. (Optional) Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate    # Windows
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 3. Install required packages
+pip install streamlit pillow
 
-3. Run the app:
-   ```bash
-   streamlit run app.py
-   ```
+# 4. Run the app
+streamlit run app.py
+```
 
-> ⚠️ Tip: If the image doesn't load, make sure `my_photo.jpg` is in the same folder as `app.py`.
+> The app will open in your browser at `http://localhost:8501`
 
----
-
-### ☁️ Deployed Version
-
-**Live App URL:**  
-[🔗 Click to view the deployed Streamlit app](https://evadamonte-ofqmom4cvvps7fdhkyfvgn.streamlit.app/)
+### 🧩 Dependencies
+- `streamlit >= 1.20`
+- `pillow >= 9.0`
 
 ---
 
@@ -100,13 +97,12 @@ Whether you're trying to lose weight, gain muscle, or maintain a healthy lifesty
 - [JoyFoodSunshine – Smoothie + Omelet Recipes](https://joyfoodsunshine.com/)
 - [Oh She Glows – Power Bowl Meal Prep](https://ohsheglows.com/meal-prep-week-long-power-bowls/)
 - [Motivation Videos:](https://www.youtube.com/watch?v=BHY0FxzoKZE), [YOU vs YOU](https://www.youtube.com/watch?v=H5ExSyGTgt4), [David Goggins](https://www.youtube.com/watch?v=QTB1YiWxxKU)
-- [Spotify Playlists](https://open.spotify.com/)
+- [Spotify Playlists](https://open.spotify.com/genre/0JQ5DAqbMKFAXlCG6QvYQ4)
 
 ---
 
-## 📷 Visual Examples
+## 📷 Sneak Peek
 
-> 💡 Save these images in a folder called `screenshots/` inside your `StreamlitAppFinal/` directory and push them to GitHub.
 
 ### Home Screen
 ![Home](screenshots/home.png)
@@ -117,9 +113,11 @@ Whether you're trying to lose weight, gain muscle, or maintain a healthy lifesty
 ### Nutrition Tab with Recipe Links
 ![Nutrition](screenshots/nutrition_plan.png)
 
-### Motivation & Music Tabs
+### Motivation 
 ![Motivation](screenshots/motivation_tab.png)
 
+### Music 
+![Music](screenshots/music_tab.png)
 ---
 
 ## 👨‍💻 Built By
