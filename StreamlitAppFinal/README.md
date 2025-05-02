@@ -7,34 +7,31 @@ Whether you're trying to lose weight, gain muscle, or maintain a healthy lifesty
 
 ---
 
-## 🛠️ Setup & Run Instructions
+### 🚀 Setup & Run Instructions
+To run this app locally:
 
-### 🧱 Local Installation
+```bash
+# 1. Clone the repository
+https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
+cd StreamlitAppFinal
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/evadamonte/DAMONTE-Python-Portfolio.git
-   cd DAMONTE-Python-Portfolio/StreamlitAppFinal
-   ```
+# 2. (Optional) Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate    # Windows
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 3. Install required packages
+pip install streamlit pillow
 
-3. Run the app:
-   ```bash
-   streamlit run app.py
-   ```
+# 4. Run the app
+streamlit run app.py
+```
 
-> ⚠️ Tip: If the image doesn't load, make sure `my_photo.jpg` is in the same folder as `app.py`.
+> The app will open in your browser at `http://localhost:8501`
 
----
-
-### ☁️ Deployed Version
-
-**Live App URL:**  
-[🔗 Click to view the deployed Streamlit app](https://evadamonte-ofqmom4cvvps7fdhkyfvgn.streamlit.app/)
+### 🧩 Dependencies
+- `streamlit >= 1.20`
+- `pillow >= 9.0`
 
 ---
 
