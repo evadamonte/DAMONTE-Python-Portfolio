@@ -117,9 +117,11 @@ Whether you're trying to lose weight, gain muscle, or maintain a healthy lifesty
 ### Nutrition Tab with Recipe Links
 ![Nutrition](screenshots/nutrition_plan.png)
 
-### Motivation & Music Tabs
+### Motivation 
 ![Motivation](screenshots/motivation_tab.png)
 
+### Music 
+![Music](screenshots/music_tab.png)
 ---
 
 ## 👨‍💻 Built By
