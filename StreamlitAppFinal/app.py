@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-import os
 
 # Set page config
 st.set_page_config(page_title="Fitness Goal Tracker", page_icon="💪", layout="centered")
@@ -15,10 +14,7 @@ except:
 
 # App title and intro
 st.title("💪 Fitness Goal Tracker")
-st.markdown(
-    "<h4 style='color: #4CAF50;'>Plan smarter. Train better. Eat cleaner.</h4>",
-    unsafe_allow_html=True,
-)
+st.markdown("<h4 style='color: #4CAF50;'>Plan smarter. Train better. Eat cleaner.</h4>", unsafe_allow_html=True)
 st.write("Enter your information below to receive a personalized fitness and nutrition plan tailored to your goals.")
 
 # Input section
@@ -26,7 +22,6 @@ st.markdown("### 📋 Your Info:")
 weight = st.number_input("Current weight (lbs):", min_value=50, max_value=500)
 goal_weight = st.number_input("Goal weight (lbs):", min_value=50, max_value=500)
 
-# New height input (feet and inches)
 height_feet = st.number_input("Height (feet):", min_value=3, max_value=8)
 height_inches = st.number_input("Additional height (inches):", min_value=0, max_value=11)
 height = height_feet * 12 + height_inches
@@ -36,17 +31,10 @@ activity_level = st.selectbox("Activity level:", ["Sedentary", "Lightly Active",
 goal_type = st.selectbox("What is your goal?", ["Lose weight", "Maintain", "Gain muscle"])
 location_type = st.selectbox("Preferred workout location:", ["At Home", "Outdoor", "Gym"])
 
-# Animated Progress Bars
-if height > 0:
-    bmi = (weight / (height * height)) * 703
-    st.progress(min(int((bmi / 40) * 100), 100), text=f"Current BMI: {bmi:.1f}")
-    cal_bar = int((weight / 300) * 100)
-    st.progress(min(cal_bar, 100), text=f"Weight Progress: {weight} lbs")
-
 # Tabs
 workout_tab, nutrition_tab, motivation_tab, music_tab = st.tabs(["🏋️ Workout Plan", "🥗 Nutrition Plan", "🎤 Motivation", "🎵 Workout Music"])
 
-# Tab 3: Motivation
+# Motivation Tab
 with motivation_tab:
     st.header("🔥 Motivational Speeches")
     st.write("Need a boost? These short speeches will get your mindset right.")
@@ -57,7 +45,7 @@ with motivation_tab:
     st.markdown("**3. Les Brown – 'You Gotta Be Hungry'**")
     st.video("https://www.youtube.com/watch?v=KxGRhd_iWuE")
 
-# Tab 4: Music
+# Music Tab
 with music_tab:
     st.header("🎵 Choose Your Workout Music")
     playlist_options = {
@@ -69,32 +57,33 @@ with music_tab:
     st.markdown(f"**{choice} Playlist**")
     st.components.v1.iframe(playlist_options[choice], height=380)
 
-# Generate Plan Button
+# Generate Plan
 if st.button("Generate My Plan"):
     if weight == 0 or goal_weight == 0 or height == 0 or age == 0:
         st.error("🚫 Please make sure all input fields are filled out correctly before generating your plan.")
     else:
         bmi = (weight / (height * height)) * 703
-        st.subheader(f"Your BMI is: {bmi:.1f}")
-        bmi_status = ""
-        if bmi < 18.5:
-            bmi_status = "Underweight"
-            st.info("You are underweight.")
-        elif bmi < 24.9:
-            bmi_status = "Healthy Weight"
-            st.success("You are at a healthy weight.")
-        elif bmi < 29.9:
-            bmi_status = "Overweight"
-            st.warning("You are overweight.")
-        else:
-            bmi_status = "Obese"
-            st.error("You are obese.")
-
         bmr = 10 * (weight * 0.45) + 6.25 * (height * 2.54) - 5 * age + 5
         multiplier = {"Sedentary": 1.2, "Lightly Active": 1.375, "Active": 1.55, "Very Active": 1.725}
         maintenance_calories = bmr * multiplier[activity_level]
         goal_calories = maintenance_calories + (-500 if goal_type == "Lose weight" else 300 if goal_type == "Gain muscle" else 0)
-        st.subheader(f"Recommended Daily Calories: {int(goal_calories)} kcal")
+
+        st.subheader("📊 Summary Metrics")
+        st.metric(label="Body Mass Index (BMI)", value=f"{bmi:.1f}")
+        st.metric(label="Target Daily Calories", value=f"{int(goal_calories)} kcal")
+
+        if bmi < 18.5:
+            bmi_status = "Underweight"
+            st.success("✅ You're underweight — your plan focuses on strength and high-quality calories.")
+        elif bmi < 24.9:
+            bmi_status = "Healthy Weight"
+            st.success("🟢 You're at a healthy weight — let's maintain and build lean muscle.")
+        elif bmi < 29.9:
+            bmi_status = "Overweight"
+            st.warning("🟠 You're overweight — we'll work on trimming fat and boosting energy.")
+        else:
+            bmi_status = "Obese"
+            st.error("🔴 You're in the obese range — safety and sustainability come first in this plan.")
 
         plan_text = f"""Fitness Goal Tracker Plan
 ------------------------------
@@ -108,73 +97,25 @@ BMI: {bmi:.1f} ({bmi_status})
 Recommended Calories: {int(goal_calories)} kcal
 """
 
+        # Workout Plan
         with workout_tab:
             st.header("🏋️ Your Personalized Weekly Workout Plan")
-            st.markdown("[Click here for YouTube workout demos](https://www.youtube.com/channel/UC7t6QJ4u8qF8pI-vibX-BUQ)")
-            plan = ""
+            st.markdown("[Click here for YouTube workout demos](https://www.youtube.com/@bodyproject/videos)")
             if bmi_status in ["Overweight", "Obese"]:
-                if location_type == "At Home":
-                    plan = """
-                    - 4x Low-impact cardio (march in place, step-ups)
-                    - 3x Strength (bodyweight squats, wall pushups, glute bridges)
-                    - Daily stretching & mobility
-                    """
-                elif location_type == "Outdoor":
-                    plan = """
-                    - 5x Walks (start with 20 mins, add 5 mins each week)
-                    - 2x Hill walks or stairs
-                    - Optional: Resistance band circuits on park benches
-                    """
-                else:
-                    plan = """
-                    - 3x Elliptical or recumbent bike (20–30 mins)
-                    - 2x Strength machines (leg press, row, chest press)
-                    - Stretch & foam roll after each session
-                    """
+                plan = "- 4x Low-impact cardio (march in place, step-ups)\n- 3x Strength (bodyweight squats, wall pushups)\n- Daily stretching & mobility"
             elif bmi_status == "Underweight":
-                if location_type == "At Home":
-                    plan = """
-                    - 4x Strength (push-ups, lunges, backpack rows)
-                    - 2x Yoga or pilates for stability
-                    - Calorie-dense post-workout snacks
-                    """
-                elif location_type == "Outdoor":
-                    plan = """
-                    - 3x Hill sprints or stair intervals
-                    - 2x Full-body strength using park equipment
-                    - Extra rest and high-protein meals after
-                    """
-                else:
-                    plan = """
-                    - 4x Gym weightlifting (compound lifts + accessories)
-                    - 1x HIIT finishers
-                    - Protein shake post-session
-                    """
+                plan = "- 4x Strength (push-ups, lunges, backpack rows)\n- 2x Yoga or pilates\n- High-calorie post-workout snacks"
             else:
-                if location_type == "At Home":
-                    plan = """
-                    - 3x Full-body HIIT (squats, pushups, planks, jumping jacks)
-                    - 2x Mobility & stretching days
-                    - Optional: Dumbbell or resistance band circuits
-                    """
-                elif location_type == "Outdoor":
-                    plan = """
-                    - 3x Jog or bike (30–45 mins)
-                    - 2x Bodyweight circuits using park
-                    - 1x Long walk or hike
-                    """
-                else:
-                    plan = """
-                    - 4x Gym split (Push/Pull/Legs/Conditioning)
-                    - 1x Cardio day (rower, incline walk)
-                    - Optional: group fitness class
-                    """
+                plan = "- 3x Full-body HIIT (squats, pushups, jumping jacks)\n- 2x Mobility days\n- Optional: resistance band circuits"
+
             st.markdown(plan)
             plan_text += "\nWorkout Plan:\n" + plan.replace("-", "*")
 
+        # Nutrition Plan
         with nutrition_tab:
             st.header("🥗 Your Nutrition Guide")
-            st.markdown("How to meal prep: https://nutritionsource.hsph.harvard.edu/meal-prep/")
+            st.markdown("[📽️ Healthy Meal Prep Video](https://www.youtube.com/watch?v=H7zL2ZGqxYo)")
+            st.caption("These links and examples will help you build sustainable, nutrient-rich meals.")
 
             st.markdown("### 🔑 Focus On:")
             st.markdown("- **Protein:** Chicken, tofu, fish, eggs — [Recipe Ideas](https://www.bbcgoodfood.com/recipes/collection/high-protein-recipes)")
@@ -193,7 +134,6 @@ Recommended Calories: {int(goal_calories)} kcal
             plan_text += "Fats: Avocado, olive oil, nuts\n"
             plan_text += "Veggies: Leafy greens, broccoli, peppers\n"
             plan_text += "Recipes: Smoothie, Omelet, Power Bowl\n"
-
 
         st.subheader("📥 Download Your Custom Plan:")
         st.download_button("Download My Plan", plan_text, "fitness_plan.txt", "text/plain")
