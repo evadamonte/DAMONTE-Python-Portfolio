@@ -6,11 +6,12 @@ st.set_page_config(page_title="Fitness Goal Tracker", page_icon="💪", layout="
 
 # --- Sidebar image (user photo) ---
 try:
-    image = Image.open("my_photo.jpg")
+    image = Image.open("my_photo.jpg")  # Must be in the same folder as app.py
     rotated_image = image.rotate(-90, expand=True)
     st.sidebar.image(rotated_image, use_column_width=True)
-except:
-    st.sidebar.warning("Personal image not found. Using app default visuals.")
+except Exception as e:
+    st.sidebar.warning("⚠️ Photo not found. Please add 'my_photo.jpg' to your app folder.")
+
 
 # --- App Title and Intro ---
 st.title("💪 Fitness Goal Tracker")
