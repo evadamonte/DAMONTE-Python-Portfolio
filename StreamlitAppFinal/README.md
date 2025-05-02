@@ -104,9 +104,8 @@ Whether you're trying to lose weight, gain muscle, or maintain a healthy lifesty
 
 ---
 
-## 📷 Visual Examples
+## 📷 Sneak Peek
 
-> 💡 Save these images in a folder called `screenshots/` inside your `StreamlitAppFinal/` directory and push them to GitHub.
 
 ### Home Screen
 ![Home](screenshots/home.png)
