@@ -5,9 +5,6 @@ import os
 # Set page config
 st.set_page_config(page_title="Fitness Goal Tracker", page_icon="💪", layout="centered")
 
-# Display a hero image
-st.image("https://images.unsplash.com/photo-1583454110551-21c3e7f42b37?fit=crop&w=1200&q=80", use_column_width=True)
-
 # Try loading your personal photo
 try:
     image = Image.open("my_photo.jpg")
@@ -37,19 +34,49 @@ height = height_feet * 12 + height_inches
 age = st.number_input("Age:", min_value=10, max_value=100)
 activity_level = st.selectbox("Activity level:", ["Sedentary", "Lightly Active", "Active", "Very Active"])
 goal_type = st.selectbox("What is your goal?", ["Lose weight", "Maintain", "Gain muscle"])
+location_type = st.selectbox("Preferred workout location:", ["At Home", "Outdoor", "Gym"])
+
+# Animated Progress Bars
+if height > 0:
+    bmi = (weight / (height * height)) * 703
+    st.progress(min(int((bmi / 40) * 100), 100), text=f"Current BMI: {bmi:.1f}")
+    cal_bar = int((weight / 300) * 100)
+    st.progress(min(cal_bar, 100), text=f"Weight Progress: {weight} lbs")
 
 # Tabs
-tab1, tab2, tab3, tab4 = st.tabs(["🏋️ Workout Plan", "🥗 Nutrition Plan", "🎤 Motivation", "🎵 Workout Music"])
+workout_tab, nutrition_tab, motivation_tab, music_tab = st.tabs(["🏋️ Workout Plan", "🥗 Nutrition Plan", "🎤 Motivation", "🎵 Workout Music"])
+
+# Tab 3: Motivation
+with motivation_tab:
+    st.header("🔥 Motivational Speeches")
+    st.write("Need a boost? These short speeches will get your mindset right.")
+    st.markdown("**1. Eric Thomas – 'How Bad Do You Want It?'**")
+    st.video("https://www.youtube.com/watch?v=lsSC2vx7zFQ")
+    st.markdown("**2. Jocko Willink – 'GOOD'**")
+    st.video("https://www.youtube.com/watch?v=IdTMDpizis8")
+    st.markdown("**3. Les Brown – 'You Gotta Be Hungry'**")
+    st.video("https://www.youtube.com/watch?v=KxGRhd_iWuE")
+
+# Tab 4: Music
+with music_tab:
+    st.header("🎵 Choose Your Workout Music")
+    playlist_options = {
+        "Yoga 🧘": "https://open.spotify.com/embed/playlist/37i9dQZF1DWUZ5bk6qqDSy",
+        "Jogging 🏃": "https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC",
+        "Weight Lifting 🏋️": "https://open.spotify.com/embed/playlist/37i9dQZF1DWUVpAXiEPK8P"
+    }
+    choice = st.selectbox("What type of workout are you doing?", list(playlist_options.keys()))
+    st.markdown(f"**{choice} Playlist**")
+    st.components.v1.iframe(playlist_options[choice], height=380)
 
 # Generate Plan Button
 if st.button("Generate My Plan"):
-    # Basic input validation
     if weight == 0 or goal_weight == 0 or height == 0 or age == 0:
         st.error("🚫 Please make sure all input fields are filled out correctly before generating your plan.")
     else:
-        # BMI calculation
         bmi = (weight / (height * height)) * 703
         st.subheader(f"Your BMI is: {bmi:.1f}")
+        bmi_status = ""
         if bmi < 18.5:
             bmi_status = "Underweight"
             st.info("You are underweight.")
@@ -63,14 +90,12 @@ if st.button("Generate My Plan"):
             bmi_status = "Obese"
             st.error("You are obese.")
 
-        # Calorie estimation
         bmr = 10 * (weight * 0.45) + 6.25 * (height * 2.54) - 5 * age + 5
         multiplier = {"Sedentary": 1.2, "Lightly Active": 1.375, "Active": 1.55, "Very Active": 1.725}
         maintenance_calories = bmr * multiplier[activity_level]
         goal_calories = maintenance_calories + (-500 if goal_type == "Lose weight" else 300 if goal_type == "Gain muscle" else 0)
         st.subheader(f"Recommended Daily Calories: {int(goal_calories)} kcal")
 
-        # Download plan text
         plan_text = f"""Fitness Goal Tracker Plan
 ------------------------------
 Current Weight: {weight} lbs
@@ -83,68 +108,92 @@ BMI: {bmi:.1f} ({bmi_status})
 Recommended Calories: {int(goal_calories)} kcal
 """
 
-        with tab1:
-            st.header("🏋️ Your Weekly Workout Plan")
-            if goal_type == "Lose weight":
-                plan = """
-                - 5x Brisk walks (30 mins)
-                - 2x Strength circuits
-                - 1x HIIT cardio session
-                """
-            elif goal_type == "Gain muscle":
-                plan = """
-                - 4x Strength (Push, Pull, Legs, Upper Split)
-                - 1x Conditioning (sleds, rowing)
-                """
+        with workout_tab:
+            st.header("🏋️ Your Personalized Weekly Workout Plan")
+            st.markdown("[Click here for YouTube workout demos](https://www.youtube.com/channel/UC7t6QJ4u8qF8pI-vibX-BUQ)")
+            plan = ""
+            if bmi_status in ["Overweight", "Obese"]:
+                if location_type == "At Home":
+                    plan = """
+                    - 4x Low-impact cardio (march in place, step-ups)
+                    - 3x Strength (bodyweight squats, wall pushups, glute bridges)
+                    - Daily stretching & mobility
+                    """
+                elif location_type == "Outdoor":
+                    plan = """
+                    - 5x Walks (start with 20 mins, add 5 mins each week)
+                    - 2x Hill walks or stairs
+                    - Optional: Resistance band circuits on park benches
+                    """
+                else:
+                    plan = """
+                    - 3x Elliptical or recumbent bike (20–30 mins)
+                    - 2x Strength machines (leg press, row, chest press)
+                    - Stretch & foam roll after each session
+                    """
+            elif bmi_status == "Underweight":
+                if location_type == "At Home":
+                    plan = """
+                    - 4x Strength (push-ups, lunges, backpack rows)
+                    - 2x Yoga or pilates for stability
+                    - Calorie-dense post-workout snacks
+                    """
+                elif location_type == "Outdoor":
+                    plan = """
+                    - 3x Hill sprints or stair intervals
+                    - 2x Full-body strength using park equipment
+                    - Extra rest and high-protein meals after
+                    """
+                else:
+                    plan = """
+                    - 4x Gym weightlifting (compound lifts + accessories)
+                    - 1x HIIT finishers
+                    - Protein shake post-session
+                    """
             else:
-                plan = """
-                - 3x Full-body lifts
-                - 2x Light cardio (cycling, jogging)
-                """
+                if location_type == "At Home":
+                    plan = """
+                    - 3x Full-body HIIT (squats, pushups, planks, jumping jacks)
+                    - 2x Mobility & stretching days
+                    - Optional: Dumbbell or resistance band circuits
+                    """
+                elif location_type == "Outdoor":
+                    plan = """
+                    - 3x Jog or bike (30–45 mins)
+                    - 2x Bodyweight circuits using park
+                    - 1x Long walk or hike
+                    """
+                else:
+                    plan = """
+                    - 4x Gym split (Push/Pull/Legs/Conditioning)
+                    - 1x Cardio day (rower, incline walk)
+                    - Optional: group fitness class
+                    """
             st.markdown(plan)
             plan_text += "\nWorkout Plan:\n" + plan.replace("-", "*")
 
-        with tab2:
+        with nutrition_tab:
             st.header("🥗 Your Nutrition Guide")
-            nutrition = """
-            **Focus on:**
-            - Protein: Chicken, eggs, tofu, legumes
-            - Carbs: Brown rice, oats, quinoa
-            - Fats: Avocado, olive oil, almonds
+            st.markdown("How to meal prep: (https://nutritionsource.hsph.harvard.edu/meal-prep/")
 
-            **Sample Meals:**
+            st.markdown("### 🔑 Focus On:")
+            st.markdown("- **Protein:** Chicken, tofu, fish, eggs — [Recipe Ideas](https://www.bbcgoodfood.com/recipes/collection/high-protein-recipes)")
+            st.markdown("- **Carbs:** Sweet potato, oats, quinoa, brown rice — [Healthy Carbs](https://www.mayoclinic.org/healthy-lifestyle/recipes/healthy-carb-recipes/rcs-20077160)")
+            st.markdown("- **Fats:** Avocado, olive oil, nuts — [Healthy Fats Guide](https://palm.southbeachdiet.com/healthy-fat-servings/)")
+            st.markdown("- **Vegetables:** Leafy greens, peppers, broccoli — [Vegetable Side Dishes](https://www.loveandlemons.com/vegetable-side-dishes/)")
 
-            🍽️ Protein Smoothie  
-            🍳 Veggie Omelet  
-            🥗 Chicken Power Bowl  
-            """
-            st.markdown(nutrition)
-            plan_text += "\nNutrition Plan:\n" + nutrition.replace("**", "").replace("-", "*")
+            st.markdown("### 🍽️ Sample Meal Ideas:")
+            st.markdown("- 🥤 [Protein Smoothie Recipe](https://joyfoodsunshine.com/protein-smoothie/)")
+            st.markdown("- 🍳 [Veggie Omelet Recipe](https://joyfoodsunshine.com/omelette-recipe/)")
+            st.markdown("- 🥗 [Chicken Power Bowl](https://ohsheglows.com/meal-prep-week-long-power-bowls/)")
 
-        with tab3:
-            st.header("🔥 Motivational Speeches")
-            st.write("Need a boost? These short speeches will get your mindset right.")
-            st.markdown("**1. Eric Thomas – 'How Bad Do You Want It?'**")
-            st.video("https://www.youtube.com/watch?v=lsSC2vx7zFQ")
-            st.markdown("**2. Jocko Willink – 'GOOD'**")
-            st.video("https://www.youtube.com/watch?v=IdTMDpizis8")
-            st.markdown("**3. Les Brown – 'You Gotta Be Hungry'**")
-            st.video("https://www.youtube.com/watch?v=KxGRhd_iWuE")
+            plan_text += "\nNutrition Plan:\n"
+            plan_text += "Protein: Chicken, tofu, fish, eggs\n"
+            plan_text += "Carbs: Sweet potato, oats, quinoa, brown rice\n"
+            plan_text += "Fats: Avocado, olive oil, nuts\n"
+            plan_text += "Veggies: Leafy greens, broccoli, peppers\n"
+            plan_text += "Recipes: Smoothie, Omelet, Power Bowl\n"
 
-        with tab4:
-            st.header("🎵 Choose Your Workout Music")
-            workout_type = st.selectbox("What type of workout are you doing?", ["Yoga 🧘", "Jogging 🏃", "Weight Lifting 🏋️"])
 
-            if workout_type == "Yoga 🧘":
-                st.markdown("**Relaxing Yoga Playlist**")
-                st.components.v1.iframe("https://open.spotify.com/embed/playlist/37i9dQZF1DWUZ5bk6qqDSy", height=380)
-            elif workout_type == "Jogging 🏃":
-                st.markdown("**Running Motivation Playlist**")
-                st.components.v1.iframe("https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC", height=380)
-            else:
-                st.markdown("**Hardcore Lifting Playlist**")
-                st.components.v1.iframe("https://open.spotify.com/embed/playlist/37i9dQZF1DWUVpAXiEPK8P", height=380)
-
-        # Provide download button
         st.subheader("📥 Download Your Custom Plan:")
         st.download_button("Download My Plan", plan_text, "fitness_plan.txt", "text/plain")
