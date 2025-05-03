@@ -16,7 +16,7 @@ Welcome to my Python project portfolio! This repository showcases a collection o
 |--------|-------------|------|
 | 💪 Fitness Tracker | Personalized fitness + nutrition planning app | [View](https://evadamonte-ofqmom4cvvps7fdhkyfvgn.streamlit.app/) |
 | 🧠 NER App | NLP tool with custom entity matching | [View](https://damonte-python-portfolio-r2fnqpbevnnb7okbc6hwdf.streamlit.app/) |
-| 🧼 Tidy Data | Olympic medalist data wrangling + visuals | [View](#3-🧼-tidy-data-project) |
+| 🧼 Tidy Data | Olympic medalist data wrangling + visuals | [View](https://github.com/evadamonte/DAMONTE-Python-Portfolio/tree/main/TidyData-Project-main) |
 
 
 ---
