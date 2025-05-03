@@ -168,7 +168,7 @@ Launch the app automatically
 Get your live URL
 
 After it deploys, you’ll get a public link like:
-👉 [Click here to try the app live](https://your-link.streamlit.app)
+👉 [Click here to try the app live](https://damonte-python-portfolio-r2fnqpbevnnb7okbc6hwdf.streamlit.app/)
 
 
 ---
