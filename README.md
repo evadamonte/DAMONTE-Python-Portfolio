@@ -5,7 +5,7 @@ Welcome to my Python project portfolio! This repository showcases a collection o
 
 ---
 
-## 📂 Projects Overview
+## 📂 Projects Overview at a Glance
 
 ### Main Repository
 - 📁 [Source Code](https://github.com/evadamonte/DAMONTE-Python-Portfolio/tree/main)
