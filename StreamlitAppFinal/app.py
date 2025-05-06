@@ -6,7 +6,7 @@ st.set_page_config(page_title="Fitness Goal Tracker", page_icon="💪", layout="
 
 # --- Sidebar image (user photo) ---
 try:
-    image = Image.open("images/my_photo.jpg")
+    image = Image.open("StreamlitAppFinal/images/my_photo.jpg")
     rotated_image = image.rotate(-90, expand=True)
     st.sidebar.image(rotated_image, use_column_width=True)
 except Exception as e:
